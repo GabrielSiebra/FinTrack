@@ -1,3 +1,4 @@
+package main;
 import java.util.Scanner;
 
 public class main {
@@ -10,7 +11,7 @@ public class main {
         
         do{
                 System.out.println("Escolha uma opção: ");
-                System.out.println("1 - Consultar saldo");
+                System.out.println("1 - Consultar Saldo");
                 System.out.println("2 - Depositar");
                 System.out.println("3 - Sacar");
                 System.out.println("4 - Sair");
@@ -18,7 +19,7 @@ public class main {
 
                 switch (escolha) {
                 case 1:
-                    
+                    System.out.println("Saldo Atual: R$ %.2f%n " + 1000 );
                     break;
             
                 case 2:
@@ -34,6 +35,7 @@ public class main {
                     break;
             
                 default:
+                    System.out.println("Opção inválida, tente novamente!");
                     break;
             }
         }while (escolha != 4);
