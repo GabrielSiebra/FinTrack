@@ -1,9 +1,11 @@
 package service;
 
+import model.Account;
+
 public class AccountService{
     public void deposit(Account account, double amount){
         if (amount <= 0) {
-            System.out.printLn("O valor do depósito deve ser maior que 0")
+            System.out.println("O valor do depósito deve ser maior que 0");
         }
 
         double newBalance = account.getBalance() + amount;
@@ -12,11 +14,11 @@ public class AccountService{
 
     public void withdraw(Account account, double amount){
         if (amount <= 0) {
-            System.out.printLn("O valor de saque deve ser maior que 0!")
+            System.out.println("O valor de saque deve ser maior que 0!");
         }
 
         if (amount > account.getBalance()) {
-            System.out.printLn("Saldo insuficiente para saque!")
+            System.out.println("Saldo insuficiente para saque!");
         }
 
         double newBalance = account.getBalance() - amount;

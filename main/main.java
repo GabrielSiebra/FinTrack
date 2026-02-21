@@ -1,11 +1,12 @@
 package main;
 import java.util.Scanner;
-
 import model.Account;
+import service.AccountService;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        AccountService service = new AccountService();
         
         System.out.println("-- Seja muito bem-vindo--");
         int escolha = 0;
@@ -28,10 +29,29 @@ public class Main {
             
                 case 2:
                     System.out.println("Insira o valor para depositar: ");
+                    double valorDeposito = sc.nextDouble();
+
+                    try {
+                        service.deposit(minhaConta, valorDeposito);
+                        System.out.println("Depósito realizado com sucesso!");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Erro: " + e.getMessage());
+                    }
+                    System.out.println();
+
                     break;
 
                 case 3:
-                    
+                    System.out.println("Digite o valor para saque: ");
+                    double valorSaque = sc.nextDouble();
+                    try {
+                        service.withdraw(minhaConta, valorSaque);
+                        System.out.println("Saque realizado com sucesso!");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Erro: " + e.getMessage());
+                    }
+                    System.out.println();
+
                     break;
                     
                 case 4:
