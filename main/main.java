@@ -23,7 +23,7 @@ public class Main {
                 switch (escolha) {
                 case 1:
                     System.out.printf("Saldo atual: R$ %.2f\n", minhaConta.getBalance());
-                    sysoutSystem.out.println();
+                    System.out.println();
                     break;
             
                 case 2:
@@ -36,12 +36,12 @@ public class Main {
                     
                 case 4:
                     System.out.println("Saindo...");
-                    sysoutSystem.out.println();
+                    System.out.println();
                     break;
             
                 default:
                     System.out.println("Opção inválida, tente novamente!");
-                    sysoutSystem.out.println();
+                    System.out.println();
                     break;
             }
         }while (escolha != 4);
