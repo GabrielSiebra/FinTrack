@@ -1,13 +1,16 @@
 package main;
 import java.util.Scanner;
 
-public class main {
+import model.Account;
+
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
         System.out.println("-- Seja muito bem-vindo--");
         int escolha = 0;
         
+        Account minhaConta = new Account (0.0);
         
         do{
                 System.out.println("Escolha uma opção: ");
@@ -19,11 +22,12 @@ public class main {
 
                 switch (escolha) {
                 case 1:
-                    System.out.println("Saldo Atual: R$ %.2f%n " + 1000 );
+                    System.out.printf("Saldo atual: R$ %.2f\n", minhaConta.getBalance());
+                    sysoutSystem.out.println();
                     break;
             
                 case 2:
-                    
+                    System.out.println("Insira o valor para depositar: ");
                     break;
 
                 case 3:
@@ -32,10 +36,12 @@ public class main {
                     
                 case 4:
                     System.out.println("Saindo...");
+                    sysoutSystem.out.println();
                     break;
             
                 default:
                     System.out.println("Opção inválida, tente novamente!");
+                    sysoutSystem.out.println();
                     break;
             }
         }while (escolha != 4);

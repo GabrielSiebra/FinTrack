@@ -1,8 +1,11 @@
+package model;
+
+
 public class Account{
     private double balance;
 
     public Account(double balance) {
-        this.balance = balance;
+        this.balance = 0.0;
     }
 
     public double getBalance() {
