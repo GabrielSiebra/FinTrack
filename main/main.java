@@ -1,6 +1,8 @@
 package main;
+import java.util.List;
 import java.util.Scanner;
 import model.Account;
+import model.Transaction;
 import service.AccountService;
 
 public class Main {
@@ -94,8 +96,19 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.println("Saindo...");
-                    System.out.println();
+                    System.out.println("\n--- Extrato da Conta ---");
+                    
+                    List<Transaction> extrato = service.getStatement(myAccount);
+                    
+                    if (extrato.isEmpty()) {
+                        System.out.println("Nenhuma movimentação registrada ainda.");
+                    } else {
+                        for (Transaction t : extrato) {
+                            System.out.println(t); 
+                        }
+                    }
+                    
+                    System.out.printf("Saldo atual: R$ %.2f\n", service.checkBalance(myAccount));
                     break;
                     
                 case 6:

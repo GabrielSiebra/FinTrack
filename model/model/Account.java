@@ -20,7 +20,7 @@ public class Account{
         this.balance = balance;
     }
 
-    public List<Transaction> geTransactions(){
+    public List<Transaction> getTransactions(){
         return transactions;
     }
 
