@@ -49,6 +49,9 @@ public class AccountService{
         } else {
             throw new IllegalArgumentException("Tipo de transação inválido.");
         }
+
+        Transaction novaTransacao = new Transaction(type, description, amount);
+        account.getTransactions().add(novaTransacao);
     }
 
     public double checkBalance (Account account){
